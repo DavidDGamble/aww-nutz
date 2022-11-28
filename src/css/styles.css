@@ -11,7 +11,7 @@
 	overflow: hidden;
 }
 
-.squirrel {
+#squirrel {
 	width: 50px;
 	height: 60px;
 	background-color: black;
@@ -20,12 +20,11 @@
 	left: 550px;
 }
 
-.nut {
+#nut {
 	width: 20px;
 	height: 20px;
 	background-color: brown;
 	position: relative;
 	top: -60px;
 	left: 300px;
-
 }
