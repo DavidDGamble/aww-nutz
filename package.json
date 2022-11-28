@@ -1,8 +1,8 @@
 {
-  "name": "project-template",  // UPDATE WITH NEW PROJECT!
+  "name": "aww-nutz",  
   "version": "1.0.0",
   "repository": {
-    "url": "git+https://github.com/DavidDGamble/{REPONAME}.git"  // UPDATE REPONAME WITH NEW PROJECT!
+    "url": "git+https://github.com/DavidDGamble/aww-nutz.git"  
   },
   "main": "index.js",
   "scripts": {

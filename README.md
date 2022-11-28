@@ -10,7 +10,7 @@
 
 # _{Application Name}_
 
-#### By: _**David Gamble**_
+#### By: _**David Gamble, Bodie Wood, Lucas Mollerstuen, Chris Loveless & Brandon Fenk**_
 
 #### _{Brief description of application}_
 
@@ -50,7 +50,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 ## License
 
-_Copyright (c) 2022 David Gamble_
+_Copyright (c) 2022 David Gamble, Bodie Wood, Lucas Mollerstuen, Chris Loveless & Brandon Fenk_
 
 _Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:_
 
