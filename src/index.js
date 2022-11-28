@@ -2,31 +2,41 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
-function makeNut() {
-	const nutElement = document.createElement("img");
-	nutElement.setAttribute("class", "nut");
-	nutElement.setAttribute("src", "https://img.icons8.com/arcade/2x/nut.png");
-	console.log(nutElement);
 
-	document.querySelector("div.game").append(nutElement);
-	const xPos = getRandomNum(0, 600);
-	nutElement.css("left", xPos + "px");
+let squirrelElement = document.createElement("img");
+squirrelElement.setAttribute("src", "https://www.veryicon.com/download/png/animal/lovely-animal/squirrel-7?s=256");
+document.querySelector("div#squirrel").append(squirrelElement);
 
-	nutElement.css("top", "-100px");
-	const nutSpeed = getRandomNum(2000, 6000);
 
-	nutElement.animate({ "top": "430px" },
-		nutSpeed, "swing", makeNut);
-}
 
-function getRandomNum(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// function makeNut() {
+const nutElement = document.createElement("img");
+nutElement.setAttribute("class", "nut");
+nutElement.setAttribute("src", "https://img.icons8.com/arcade/2x/nut.png");
+console.log(nutElement);
+
+
+document.querySelector("div#nut").append(nutElement);
+
+// const xPos = getRandomNum(0, 600);
+
+// 	nutElement.keyfram("left", xPos + "px");
+
+// 	nutElement.css("top", "-100px");
+// 	const nutSpeed = getRandomNum(2000, 6000);
+
+// 	nutElement.animate({ "top": "430px" },
+// 		nutSpeed, "swing", makeNut);
+// }
+
+// function getRandomNum(min, max) {
+// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
 
 function startGame() {
 	let num = 10;
 	while (num > 0) {
-		makeNut();
+		// makeNut();
 		num--;
 	}
 }
@@ -39,14 +49,14 @@ window.addEventListener("load", function () {
 
 	function moveLeft() {
 		let left = parseInt(window.getComputedStyle(squirrel).getPropertyValue("left"));
-		if (left > 0) {
+		if (left > -60) {
 			squirrel.style.left = left - 2 + "px";
 		}
 	}
 
 	function moveRight() {
 		let left = parseInt(window.getComputedStyle(squirrel).getPropertyValue("left"));
-		if (left < 550) {
+		if (left < 490) {
 			squirrel.style.left = left + 2 + "px";
 		}
 	}
