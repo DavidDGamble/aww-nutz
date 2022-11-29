@@ -20,7 +20,7 @@
 	left: 275px;
 }
 
-#nut {
+.nut {
 	width: 20px;
 	height: 20px;
 	background-color: brown;
@@ -29,6 +29,7 @@
 	left: 290px;
   animation: nut 3s infinite linear; 
 }
+
 
 @keyframes nut {
   0%{top: -60px}
