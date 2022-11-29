@@ -27,6 +27,7 @@ const checkHit = setInterval(function () {
     game.appendChild(nut);
   }
 }, 10);
+console.log(checkHit);
 
 function moveLeft() {
   let left = parseInt(window.getComputedStyle(squirrel).getPropertyValue("left"));
@@ -59,4 +60,3 @@ document.addEventListener("keyup", event => {
   clearInterval(interval);
   both = 0;
 });
-
