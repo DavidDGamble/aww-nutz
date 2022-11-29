@@ -19,12 +19,16 @@ const checkHit = setInterval(function () {
   if (nutRight >= squirrelLeft && nutLeft <= squirrelRight && nutBot >= 560) {
     nut.remove();
     score.currScore++;
-    console.log(nut);
-    // let nuts = document.createElement("div");
-    // nuts.setAttribute("id", "nut");
     document.getElementById("scoreSpan").innerHTML = score.currScore;
-    console.log(game);
-    game.appendChild(nut);
+    nut.style.left = score.random() + "px";
+    game.append(nut);
+    score.checkLevel();
+  } else if (nutBot >= 620) {
+    // code for game over ----------
+    alert("ur dead");
+    score.checkHigh(); // insert highscore to DOM
+    score.currScore = 0;
+    console.log(score.highScore);
   }
 }, 10);
 console.log(checkHit);
