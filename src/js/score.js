@@ -3,4 +3,6 @@ export default class Score {
 		this.highScore = 0;
 		this.currScore = 0;
 	}
+
+
 }

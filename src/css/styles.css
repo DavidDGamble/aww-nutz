@@ -25,9 +25,9 @@
 	height: 20px;
 	background-color: brown;
 	position: relative;
-	top: -60px;
+  top: -60px;
 	left: 290px;
-  animation: nut 1s infinite linear; 
+  animation: nut 3s infinite linear; 
 }
 
 @keyframes nut {
