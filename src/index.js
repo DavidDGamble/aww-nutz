@@ -5,7 +5,7 @@ import Score from './js/score.js';
 
 let game = document.getElementById("game");
 let squirrel = document.getElementById("squirrel");
-let nut = document.getElementById("nut");
+let nut = document.getElementById("acorn");
 let both = 0;  //if users clicks both keys at the same time
 let interval;
 let score = new Score();
