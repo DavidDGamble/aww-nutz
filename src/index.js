@@ -4,39 +4,40 @@ import './css/styles.css';
 
 
 let squirrelElement = document.createElement("img");
+squirrelElement.setAttribute("id", "rodent");
 squirrelElement.setAttribute("src", "https://www.veryicon.com/download/png/animal/lovely-animal/squirrel-7?s=256");
 document.querySelector("div#squirrel").append(squirrelElement);
 
 
 
-// function makeNut() {
-const nutElement = document.createElement("img");
-nutElement.setAttribute("class", "nut");
-nutElement.setAttribute("src", "https://img.icons8.com/arcade/2x/nut.png");
-console.log(nutElement);
+function makeNut() {
+	nutPosition();
+	let nutDiv = document.createElement("div");
+	nutDiv.setAttribute("class", "nut");
+	let nutElement = document.createElement("img");
+	nutElement.setAttribute("id", "acorn");
+	nutElement.setAttribute("src", "https://img.icons8.com/arcade/2x/nut.png");
 
-
-document.querySelector("div#nut").append(nutElement);
-
-// const xPos = getRandomNum(0, 600);
-
-// 	nutElement.keyfram("left", xPos + "px");
-
-// 	nutElement.css("top", "-100px");
-// 	const nutSpeed = getRandomNum(2000, 6000);
-
-// 	nutElement.animate({ "top": "430px" },
-// 		nutSpeed, "swing", makeNut);
-// }
-
-// function getRandomNum(min, max) {
-// 	return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
+	nutDiv.append(nutElement);
+	let game = document.querySelector("div.game");
+	game.append(nutDiv);
+}
+function getRandomNum(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+// WIP changing x position of acorn on game start
+function nutPosition() {
+	let nut = document.querySelector("div.nut");
+	let left = parseInt(window.getComputedStyle(nut).getPropertyValue("left"));
+	if (left > 0) {
+		nut.style.left = getRandomNum(0, 600) + "px";
+	}
+}
 
 function startGame() {
-	let num = 10;
+	let num = 1;
 	while (num > 0) {
-		// makeNut();
+		makeNut();
 		num--;
 	}
 }
