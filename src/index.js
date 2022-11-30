@@ -9,22 +9,60 @@ import Swal from 'sweetalert2';
 let game = document.getElementById("game");
 let squirrel = document.getElementById("squirrel");
 let nut = document.getElementById("acorn");
-// New code -------------------------------------------------------------------------
 let nut2 = document.getElementById("nut2");
 let nut3 = document.getElementById("nut3");
-// New code -------------------------------------------------------------------------
 let both = 0;  //if users clicks both keys at the same time
 let interval;
 let score = new Score();
 
-function startGame(event) {                                         // NEW CODE
+function gameOverAlert() {
+  Swal.fire({
+    title: 'Aww, Nutz, You Lost!',
+    width: 600,
+    padding: '3em',
+    color: '#716add',
+    background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+    backdrop: `
+    rgba(0,0,123,0.4)
+    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+    left top
+    no-repeat
+  `
+  });
+}
+
+const createNut = () => {
+  if (score.currScore === 5) {
+    setTimeout(() => {
+      if (!score.gameOver) {
+        nut2.removeAttribute("id", "acorn");
+        nut2.setAttribute("id", "acorn2");
+        nut2.removeAttribute("class", "hidden");
+        nut2.style.left = score.random() + "px";
+        game.append(nut2);
+      }
+    }, "1000");
+  } else if (score.currScore === 10) {
+    setTimeout(() => {
+      if (!score.gameOver) {
+        nut3.removeAttribute("id", "acorn");
+        nut3.setAttribute("id", "acorn3");
+        nut3.removeAttribute("class", "hidden");
+        nut3.style.left = score.random() + "px";
+        game.append(nut3);
+      }
+    }, "2000");
+  }
+};
+
+function startGame(event) {
   event.preventDefault();
   score.gameOver = false;
   document.getElementById("scoreSpan").innerHTML = score.currScore;
-  const startBtn = document.getElementById("startBtn");             // NEW CODE
-  const nutFallingAnimation = document.getElementById("acorn");     // NEW CODE
-  startBtn.setAttribute("class", "hidden");                         // NEW CODE
-  nutFallingAnimation.removeAttribute("class", "hidden");           // NEW CODE
+  const startBtn = document.getElementById("startBtn");
+  const nutFallingAnimation = document.getElementById("acorn");
+  startBtn.setAttribute("class", "hidden");
+  nutFallingAnimation.removeAttribute("class", "hidden");
 
   const checkHit = setInterval(function () {
     const squirrelLeft = parseInt(window.getComputedStyle(squirrel).getPropertyValue("left"));
@@ -42,67 +80,22 @@ function startGame(event) {                                         // NEW CODE
       nut2Left = parseInt(window.getComputedStyle(nut2).getPropertyValue("left"));
       nut2Right = nut2Left + 20;
       nut2Bot = parseInt(window.getComputedStyle(nut2).getPropertyValue("top"));
-    } 
+    }
     if (score.currScore > 10) {
       nut3Left = parseInt(window.getComputedStyle(nut3).getPropertyValue("left"));
       nut3Right = nut3Left + 20;
       nut3Bot = parseInt(window.getComputedStyle(nut3).getPropertyValue("top"));
     }
-  
+
     if (nutRight >= squirrelLeft && nutLeft <= squirrelRight && nutBot >= 560) {
       nut.remove();
       score.currScore++;
       document.getElementById("scoreSpan").innerHTML = score.currScore;
       nut.style.left = score.random() + "px";
       game.append(nut);
-      if (score.currScore === 5) {
-        setTimeout(() => {
-          if (!score.gameOver) {
-          nut2.removeAttribute("id", "acorn");
-          nut2.setAttribute("id", "acorn2");
-          nut2.removeAttribute("class", "hidden");
-          nut2.style.left = score.random() + "px";
-          game.append(nut2);
-          }
-        }, "1000");
-      } else if (score.currScore === 10) {
-        setTimeout(() => {
-          if (!score.gameOver) {
-          nut3.removeAttribute("id", "acorn");
-          nut3.setAttribute("id", "acorn3");
-          nut3.removeAttribute("class", "hidden");
-          nut3.style.left = score.random() + "px";
-          game.append(nut3);
-          }
-        }, "2000");
-      }
+      createNut();
     } else if (nutBot >= 620) {
-      // code for game over ----------
-      score.gameOver = true;
-      const aboveButton = document.getElementById("aboveButton");      // NEW CODE
-      startBtn.removeAttribute("class", "hidden");                     // NEW CODE
-      aboveButton.append(startBtn);                                    // NEW CODE
-      startBtn.setAttribute("class", "btn btn-warning");               // NEW CODE
-      nutFallingAnimation.setAttribute("class", "hidden");             // NEW CODE
-      nut2.setAttribute("class", "hidden");
-      nut3.setAttribute("class", "hidden");
-
-      Swal.fire({                                                        // ----------START ALERT--------------
-        title: 'Aww, Nutz, You Lost!',
-        width: 600,
-        padding: '3em',
-        color: '#716add',
-        background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
-        backdrop: `
-        rgba(0,0,123,0.4)
-        url("https://sweetalert2.github.io/images/nyan-cat.gif")
-        left top
-        no-repeat
-      `
-      });                                                                // --------END ALERT---------------
-      score.checkHigh();
-      score.currScore = 0;
-      document.getElementById("highSpan").innerHTML = score.highScore;
+      endGame();
     }
     if (nut2Right >= squirrelLeft && nut2Left <= squirrelRight && nut2Bot >= 560) {
       nut2.remove();
@@ -110,47 +103,11 @@ function startGame(event) {                                         // NEW CODE
       document.getElementById("scoreSpan").innerHTML = score.currScore;
       nut2.style.left = score.random() + "px";
       game.append(nut2);
-      if (score.currScore === 10) {
-        setTimeout(() => {
-          if (!score.gameOver) {
-          nut3.removeAttribute("id", "acorn");
-          nut3.setAttribute("id", "acorn3");
-          nut3.removeAttribute("class", "hidden");
-          nut3.style.left = score.random() + "px";
-          game.append(nut3);
-          }
-        }, "2000");
-      }
+      createNut();
     } else if (nut2Bot >= 620) {
-      // code for game over ----------
-      score.gameOver = true;
-      const aboveButton = document.getElementById("aboveButton");      // NEW CODE
-      startBtn.removeAttribute("class", "hidden");                     // NEW CODE
-      aboveButton.append(startBtn);                                    // NEW CODE
-      startBtn.setAttribute("class", "btn btn-warning");               // NEW CODE
-      nutFallingAnimation.setAttribute("class", "hidden");             // NEW CODE
-      nut2.setAttribute("class", "hidden");
-      nut3.setAttribute("class", "hidden");
-
-      Swal.fire({                                                        // ----------START ALERT--------------
-        title: 'Aww, Nutz, You Lost!',
-        width: 600,
-        padding: '3em',
-        color: '#716add',
-        background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
-        backdrop: `
-        rgba(0,0,123,0.4)
-        url("https://sweetalert2.github.io/images/nyan-cat.gif")
-        left top
-        no-repeat
-      `
-      });                                                                // --------END ALERT---------------
-    
-      score.checkHigh();
-      score.currScore = 0;
-      document.getElementById("highSpan").innerHTML = score.highScore;
+      endGame();
     }
-  
+
     if (nut3Right >= squirrelLeft && nut3Left <= squirrelRight && nut3Bot >= 560) {
       nut3.remove();
       score.currScore++;
@@ -159,40 +116,27 @@ function startGame(event) {                                         // NEW CODE
       game.append(nut3);
       score.checkLevel();
     } else if (nut3Bot >= 620) {
-      // code for game over ----------
-      score.gameOver = true;
-      const aboveButton = document.getElementById("aboveButton");      // NEW CODE
-      startBtn.removeAttribute("class", "hidden");                     // NEW CODE
-      aboveButton.append(startBtn);                                    // NEW CODE
-      startBtn.setAttribute("class", "btn btn-warning");               // NEW CODE
-      nutFallingAnimation.setAttribute("class", "hidden");             // NEW CODE
-      nut2.setAttribute("class", "hidden");
-      nut3.setAttribute("class", "hidden");
-
-
-      Swal.fire({                                                        // ----------START ALERT--------------
-        title: 'Aww, Nutz, You Lost!',
-        width: 600,
-        padding: '3em',
-        color: '#716add',
-        background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
-        backdrop: `
-        rgba(0,0,123,0.4)
-        url("https://sweetalert2.github.io/images/nyan-cat.gif")
-        left top
-        no-repeat
-      `
-      });                                                                // --------END ALERT---------------
-    
-      score.checkHigh();
-      score.currScore = 0;
-      document.getElementById("highSpan").innerHTML = score.highScore;
+      endGame();
     }
   }, 10);
   console.log(checkHit);
 
+  function endGame() {
+    score.gameOver = true;
+    const aboveButton = document.getElementById("aboveButton");
+    startBtn.removeAttribute("class", "hidden");
+    aboveButton.append(startBtn);
+    startBtn.setAttribute("class", "btn btn-warning");
+    nutFallingAnimation.setAttribute("class", "hidden");
+    nut2.setAttribute("class", "hidden");
+    nut3.setAttribute("class", "hidden");
 
-}                                                                      // ENDING BRACKET FOR START GAME FUNCTION
+    gameOverAlert();
+    score.checkHigh();
+    score.currScore = 0;
+    document.getElementById("highSpan").innerHTML = score.highScore;
+  }
+}
 
 function moveLeft() {
   let left = parseInt(window.getComputedStyle(squirrel).getPropertyValue("left"));
@@ -226,7 +170,7 @@ document.addEventListener("keyup", event => {
   both = 0;
 });
 
-window.addEventListener("load", function () {                 // NEW CODE
-  const startBtn = document.getElementById("startBtn");       // NEW CODE
-  startBtn.addEventListener("click", startGame);              // NEW CODE
-});                                                           // NEW CODE
+window.addEventListener("load", function () {
+  const startBtn = document.getElementById("startBtn");
+  startBtn.addEventListener("click", startGame);
+});                                                          
