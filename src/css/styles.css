@@ -80,8 +80,30 @@ body {
 	animation: nut 3s infinite linear;
 }
 
+/* New Code ---------------------------------------------------------------- */
+#acorn2 {
+	width: 30px;
+	height: 30px;
+
+	position: relative;
+	top: -60px;
+	left: 290px;
+	animation: nut 3s infinite linear;
+}
+
+#acorn3 {
+	width: 30px;
+	height: 30px;
+
+	position: relative;
+	top: -60px;
+	left: 290px;
+	animation: nut 3s infinite linear;
+}
+/* New Code ---------------------------------------------------------------- */
+
 .hidden {
-	/* display: none; */
+	display: none;
 }
 
 
