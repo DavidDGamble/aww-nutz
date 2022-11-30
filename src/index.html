@@ -5,10 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><u>Aww Nutz</u></title>
+  <link rel="icon" href="https://img.icons8.com/external-photo3ideastudio-gradient-photo3ideastudio/2x/external-chipmunk-spring-photo3ideastudio-gradient-photo3ideastudio.png">
+  <title>Aww Nutz</title>
 </head>
 
 <body>
+
+
     <div style="text-align: center;">
       <h1><u>Aww Nutz</u></h1>
     </div>
@@ -16,7 +19,7 @@
       <div id="squirrel"><img id="squirrelImage"
           src="https://www.veryicon.com/download/png/animal/lovely-animal/squirrel-7?s=256" alt="image of squirrel">
       </div>
-      <div id="nut"><img id="acorn" src="https://freepngimg.com/download/acorn/6-2-acorn-png-5.png" alt="acorn image">
+      <div id="nut" class="nut hidden"><img id="acorn" src="https://freepngimg.com/download/acorn/6-2-acorn-png-5.png" alt="acorn image">
       </div>
     </div>
     <div class="container">
@@ -26,15 +29,15 @@
             <p><u>Score: </u><span id="scoreSpan"></span></p>
           </div>
           <div class="col-6 scoreP">
-            <p><u>Highest Score: </u></p>
+            <p><u>Highest Score: </u><span id="highSpan"></span></p>
             </p>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-12" style="text-align: center">
-            <button type="button" class="btn btn-warning hidden">Start</button>
+          <div class="col-12" style="text-align: center" id="aboveButton">
+            <button type="button" class="btn btn-warning" id="startBtn">Start</button>
           </div>
         </div>
       </div>

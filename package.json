@@ -1,8 +1,8 @@
 {
-  "name": "aww-nutz",  
+  "name": "aww-nutz",
   "version": "1.0.0",
   "repository": {
-    "url": "git+https://github.com/DavidDGamble/aww-nutz.git"  
+    "url": "git+https://github.com/DavidDGamble/aww-nutz.git"
   },
   "main": "index.js",
   "scripts": {
@@ -34,6 +34,7 @@
     "webpack-dev-server": "3.11.3"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3"
+    "bootstrap": "^4.5.3",
+    "sweetalert2": "^11.6.14"
   }
 }
