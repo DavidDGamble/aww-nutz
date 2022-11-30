@@ -17,7 +17,7 @@ let score = new Score();
 
 function gameOverAlert() {
   Swal.fire({
-    title: 'Aww, Nutz, You Lost!',
+    title: 'Aww Nutz, You Lost!',
     width: 600,
     padding: '3em',
     color: '#716add',

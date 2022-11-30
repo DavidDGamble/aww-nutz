@@ -42,27 +42,29 @@ body {
 }
 
 #squirrel {
-	width: 50px;
-	height: 60px;
+	width: 80px;
+	height: 90px;
+	/* border: 1px solid black; */
 	position: relative;
-	top: 570px;
+	top: 620px;
 	left: 275px;
 }
 
 #squirrelImage {
-	width: 125px;
-	height: 160px;
+	width: 80px;
+	height: 90px;
+	/* border: 1px solid black; */
 	top: 580px;
 	left: 275px;
 }
 
-.nut {
+/* .nut {
 	width: 20px;
 	height: 20px;
 	top: -60px;
 	left: 290px;
 	animation: nut 3s infinite linear;
-}
+} */
 
 .scoreDiv {
 	margin-top: 30px;
