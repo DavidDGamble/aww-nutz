@@ -1,6 +1,4 @@
-
 * {
-
 	padding: 0;
 	margin: 0;
 }
@@ -79,7 +77,6 @@ body {
 	animation: nut 3s infinite linear;
 }
 
-/* New Code ---------------------------------------------------------------- */
 #acorn2 {
 	width: 20px;
 	height: 20px;
@@ -97,7 +94,6 @@ body {
 	left: 290px;
 	animation: nut 3s infinite linear;
 }
-/* New Code ---------------------------------------------------------------- */
 
 .hidden {
 	display: none;
