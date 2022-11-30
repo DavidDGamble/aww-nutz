@@ -2,7 +2,7 @@ export default class Score {
 	constructor() {
 		this.highScore = 0;
 		this.currScore = 0;
-		this.level = 0;
+		this.gameOver = true;
 	}
 
 	random() {
@@ -12,12 +12,6 @@ export default class Score {
 	checkHigh() {
 		if (this.currScore > this.highScore) {
 			this.highScore = this.currScore;
-		}
-	}
-
-	checkLevel() {
-		if ((this.currScore % 5 === 0 && this.currScore <= 20)) {
-			this.level ++;
 		}
 	}
 }
