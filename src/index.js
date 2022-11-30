@@ -1,6 +1,9 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import backgroundMusic from './assets/audio/Powerful-Trap-.mp3';                 //NEW CODE
+import cartoonBite from './assets/audio/cartoonBite.mp3';                        //NEW CODE
+import endSound from './assets/audio/endGameSound.mp3';                           //NEW CODE
 import Score from './js/score.js';
 import Swal from 'sweetalert2';
 
@@ -29,6 +32,10 @@ function gameOverAlert() {
     no-repeat
   `
   });
+  let endGameSound = new Audio(endSound);                     //NEW CODE
+  endGameSound.play();                                        //NEW CODE
+
+
 }
 
 const createNut = () => {
@@ -55,9 +62,17 @@ const createNut = () => {
   }
 };
 
+
 function startGame(event) {
+
   event.preventDefault();
   score.gameOver = false;
+
+  let backgroundSound = new Audio(backgroundMusic);                   //NEW CODE
+  let cartoonSound = new Audio(cartoonBite);                          //NEW CODE
+
+  backgroundSound.play();                                             //NEW CODE
+
   document.getElementById("scoreSpan").innerHTML = score.currScore;
   const startBtn = document.getElementById("startBtn");
   const nutFallingAnimation = document.getElementById("acorn");
@@ -90,38 +105,46 @@ function startGame(event) {
     if (nutRight >= squirrelLeft && nutLeft <= squirrelRight && nutBot >= 560) {
       nut.remove();
       score.currScore++;
+      cartoonSound.play();                                                        //NEW CODE
       document.getElementById("scoreSpan").innerHTML = score.currScore;
       nut.style.left = score.random() + "px";
       game.append(nut);
       createNut();
-    } else if (nutBot >= 620) {
+    } else if (nutBot >= 620) {     
+      backgroundSound.pause();                                                                  
       endGame();
     }
     if (nut2Right >= squirrelLeft && nut2Left <= squirrelRight && nut2Bot >= 560) {
       nut2.remove();
       score.currScore++;
+      cartoonSound.play();                                                        //NEW CODE
       document.getElementById("scoreSpan").innerHTML = score.currScore;
       nut2.style.left = score.random() + "px";
       game.append(nut2);
       createNut();
     } else if (nut2Bot >= 620) {
-      endGame();
+      backgroundSound.pause(); 
+      endGame();                                                                    
     }
 
     if (nut3Right >= squirrelLeft && nut3Left <= squirrelRight && nut3Bot >= 560) {
       nut3.remove();
       score.currScore++;
+      cartoonSound.play();                                                        //NEW CODE
       document.getElementById("scoreSpan").innerHTML = score.currScore;
       nut3.style.left = score.random() + "px";
       game.append(nut3);
       score.checkLevel();
     } else if (nut3Bot >= 620) {
+      backgroundSound.pause(); 
       endGame();
     }
   }, 10);
   console.log(checkHit);
 
   function endGame() {
+
+    
     score.gameOver = true;
     const aboveButton = document.getElementById("aboveButton");
     startBtn.removeAttribute("class", "hidden");
@@ -130,11 +153,14 @@ function startGame(event) {
     nutFallingAnimation.setAttribute("class", "hidden");
     nut2.setAttribute("class", "hidden");
     nut3.setAttribute("class", "hidden");
-
+    
+    
     gameOverAlert();
     score.checkHigh();
     score.currScore = 0;
     document.getElementById("highSpan").innerHTML = score.highScore;
+    
+  
   }
 }
 
