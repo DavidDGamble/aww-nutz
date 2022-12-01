@@ -1,13 +1,3 @@
-## Setup for template
-* _$ npm install_
-* _$ npm run build_
-* _Change package.json and webpack.config.js_
-## FOR GH-PAGES
-* _add ["url": "git+https://github.com/DavidDGamble/{REPONAME}.git"] to the "repository" object in package.json_
-* _$ npm run deploy_
-* _$ npm run deploy -- -m "[This updates changes to live site and this text is the commit.]"_
-* https://daviddgamble.github.io/aww-nutz/ to view page._
-
 # _Aww Nutz!_
 
 #### By: _**David Gamble, Bodie Wood, Lucas Mollerstuen, Chris Loveless & Brandon Fenk**_
