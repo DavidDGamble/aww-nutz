@@ -6,13 +6,13 @@
 * _add ["url": "git+https://github.com/DavidDGamble/{REPONAME}.git"] to the "repository" object in package.json_
 * _$ npm run deploy_
 * _$ npm run deploy -- -m "[This updates changes to live site and this text is the commit.]"_
-* _https://DavidDGamble.github.io/{REPONAME} to view page._
+* https://daviddgamble.github.io/aww-nutz/ to view page._
 
-# _{Application Name}_
+# _Aww Nutz!_
 
 #### By: _**David Gamble, Bodie Wood, Lucas Mollerstuen, Chris Loveless & Brandon Fenk**_
 
-#### _{Brief description of application}_
+#### _This i a game where you move a squrriel arcossed the bottom of the game and catch arcons as they fall. be careful of the anvil that drops!_
 
 ## Technologies Used
 
@@ -36,18 +36,16 @@ _{This is a detailed description of your application. Give as much detail as nee
 
 ## Setup/Installation Requirements
 
-* _clone the repository to your desktop from: {Enter the repository url here.}_
+* _clone the repository to your desktop from Github_
 * _enter command in terminal: $ npm install_
 * _enter command in terminal: $ npm run build_
 * _enter command in terminal: $ npm run start_
-* _Run: ```npm install sweetalert2``` for alerts__
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+* _Alternativly, go to https://daviddgamble.github.io/aww-nutz/ to play online_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _Images shift when they are added back to the game board_
+
 
 ## License
 
