@@ -44,8 +44,8 @@ body {
 #squirrel {
 	width: 80px;
 	height: 90px;
-	/* border: 1px solid black; */
 	position: relative;
+	/* border: 1px solid black; */
 	top: 620px;
 	left: 275px;
 }
@@ -58,44 +58,53 @@ body {
 	left: 275px;
 }
 
-/* .nut {
-	width: 20px;
-	height: 20px;
-	top: -60px;
-	left: 290px;
-	animation: nut 3s infinite linear;
-} */
-
 .scoreDiv {
 	margin-top: 30px;
 }
 
+/* Altered size */
 #acorn {
-	width: 20px;
+	width: 20px; 
 	height: 20px;
 	position: relative;
+	/* border: 1px solid black; */
 	top: -60px;
 	left: 290px;
 	animation: nut 3s infinite linear;
 }
 
+/* Altered size */
 #acorn2 {
 	width: 20px;
 	height: 20px;
 	position: relative;
+	/* border: 1px solid black; */
 	top: -60px;
-	left: 290px;
+	/* left: 290px; */
 	animation: nut 3s infinite linear;
 }
 
+/* Altered size */
 #acorn3 {
 	width: 20px;
 	height: 20px;
 	position: relative;
+	/* border: 1px solid black; */
 	top: -60px;
-	left: 290px;
+	/* left: 290px; */
 	animation: nut 3s infinite linear;
 }
+
+/* New code ------------------------------------------------------------ */
+#acorn4 {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	top: -60px;
+	/* left: 290px; */
+	animation: nut 3s infinite linear;
+}
+/* New code ------------------------------------------------------------ */
 
 .hidden {
 	display: none;

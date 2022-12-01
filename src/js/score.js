@@ -6,7 +6,9 @@ export default class Score {
 	}
 
 	random() {
-		return Math.floor(Math.random() * (580 - 1 + 1)) + 1;
+// New Code ---------------------------------------------------------
+		return Math.floor(Math.random() * (560 - 1)) + 1;
+// New Code ---------------------------------------------------------
 	}
 
 	checkHigh() {
