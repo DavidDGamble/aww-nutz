@@ -12,7 +12,7 @@
 
 #### By: _**David Gamble, Bodie Wood, Lucas Mollerstuen, Chris Loveless & Brandon Fenk**_
 
-#### _This i a game where you move a squrriel arcossed the bottom of the game and catch arcons as they fall. be careful of the anvil that drops!_
+#### _This is a game where you move a squrriel acrossed the bottom of the game and catch acrons as they fall. Be careful of the anvil that drops!_
 
 ## Technologies Used
 
@@ -32,7 +32,7 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_In this game the user first clicks the start button and the game begins. The goal is to catch as many acorns as possible. If you catch the anvil, game over. If you drop a nut, game over. Stay focused and beat your highscore!_
 
 ## Setup/Installation Requirements
 
