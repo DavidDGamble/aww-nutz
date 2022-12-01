@@ -4,9 +4,9 @@
 }
 
 h1 {
-	color: #B08F6A;
-	font-family: fantasy;
-	font-size: 4rem;
+	text-align: center;                  /*NEW CODE*/
+	margin: auto;												 /*NEW CODE*/
+	margin-bottom: 2%;
 }
 
 .jumbotron {
@@ -29,16 +29,27 @@ h1 {
 	margin: auto;
 	overflow: hidden;
 	background-image: url("../assets/images/DALL·E\ 2022-11-29\ 10.13.32.png");
-	background-attachment: fixed;
 	background-size: cover;
-	background-position: center center;
+	background-position: fixed;					/*NEW CODE*/
+
+
 }
+
+
+.gameColumn{                      /*NEW CODE*/
+		margin:auto;									/*NEW CODE*/
+	}																/*NEW CODE*/
+
+
 
 body {
 	background-image: url("../assets/images/DALL·E\ 2022-11-29\ 10.30.27\ -\ a\ bunch\ of\ tiny\ acorns\,\ synthwave.png");
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center center;
+	color: #B08F6A;
+	font-family: fantasy !important;    /*NEW CODE*/
+	font-size: 4rem;
 }
 
 #squirrel {
@@ -66,9 +77,7 @@ body {
 	animation: nut 3s infinite linear;
 } */
 
-.scoreDiv {
-	margin-top: 30px;
-}
+
 
 #acorn {
 	width: 20px;
@@ -109,4 +118,14 @@ body {
 	100% {
 		top: 640px
 	}
+}
+
+#aboveButton{
+	text-align: center;
+	margin: auto;
+}
+
+.scoreStyle{
+	margin: auto;
+	text-align: center;
 }
