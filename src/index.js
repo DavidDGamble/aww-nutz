@@ -35,7 +35,7 @@ function gameOverAlert() {
 }
 
 const createNut = () => {
-  if (score.currScore === 2) {
+  if (score.currScore === 5) {
     setTimeout(() => {
       if (!score.gameOver) {
         nut2.removeAttribute("id", "acorn");
@@ -43,9 +43,10 @@ const createNut = () => {
         nut2.removeAttribute("class", "hidden");
         nut2.style.left = score.random() + "px";
         game.append(nut2);
+        // console.log(parseInt(window.(getComputedStylenut2).getPropertyValue("left")));
       }
     }, "1000");
-  } else if (score.currScore === 3) {
+  } else if (score.currScore === 10) {
     setTimeout(() => {
       if (!score.gameOver) {
         nut3.removeAttribute("id", "acorn");
@@ -53,10 +54,11 @@ const createNut = () => {
         nut3.removeAttribute("class", "hidden");
         nut3.style.left = score.random() + "px";
         game.append(nut3);
+        // console.log(parseInt(window.getComputedStyle(nut3).getPropertyValue("left")));
       }
     }, "2000");
 // New code -----------------------------------------------------------------------
-  } else if (score.currScore === 4) {
+  } else if (score.currScore === 15) {
     setTimeout(() => {
       if (!score.gameOver) {
         anvil.removeAttribute("id", "acorn");
@@ -64,6 +66,7 @@ const createNut = () => {
         anvil.removeAttribute("class", "hidden");
         anvil.style.left = score.random() + "px";
         game.append(anvil);
+        // console.log(parseInt(window.getComputedStyle(anvil).getPropertyValue("left")));
       }
     }, "3000");
   }
@@ -96,21 +99,22 @@ function startGame(event) {
     let anvilRight;
     let anvilBot;
 // New code -----------------------------------------------------------------------
-    if (score.currScore > 2) {
+    if (score.currScore > 5) {
       nut2Left = parseInt(window.getComputedStyle(nut2).getPropertyValue("left"));
       nut2Right = nut2Left + 20;
       nut2Bot = parseInt(window.getComputedStyle(nut2).getPropertyValue("top"));
     }
-    if (score.currScore > 3) {
+    if (score.currScore > 10) {
       nut3Left = parseInt(window.getComputedStyle(nut3).getPropertyValue("left"));
       nut3Right = nut3Left + 20;
       nut3Bot = parseInt(window.getComputedStyle(nut3).getPropertyValue("top"));
     }
 // New code -----------------------------------------------------------------------
-    if (score.currScore > 4) {
+    if (score.currScore > 15) {
       anvilLeft = parseInt(window.getComputedStyle(anvil).getPropertyValue("left"));
       anvilRight = anvilLeft + 20;
       anvilBot = parseInt(window.getComputedStyle(anvil).getPropertyValue("top"));
+
     }
 // New code -----------------------------------------------------------------------
 
@@ -120,6 +124,7 @@ function startGame(event) {
       document.getElementById("scoreSpan").innerHTML = score.currScore;
       nut.style.left = score.random() + "px";
       game.append(nut);
+      
       createNut();
     } else if (nutBot >= 580) {
       endGame();
@@ -130,6 +135,7 @@ function startGame(event) {
       document.getElementById("scoreSpan").innerHTML = score.currScore;
       nut2.style.left = score.random() + "px";
       game.append(nut2);
+      // console.log(parseInt(window.getComputedStyle(nut2).getPropertyValue("left")));
       createNut();
     } else if (nut2Bot >= 580) {
       endGame();
@@ -141,6 +147,7 @@ function startGame(event) {
       document.getElementById("scoreSpan").innerHTML = score.currScore;
       nut3.style.left = score.random() + "px";
       game.append(nut3);
+      // console.log(parseInt(window.getComputedStyle(nut3).getPropertyValue("left")));
     } else if (nut3Bot >= 580) {
       endGame();
     }
@@ -148,14 +155,15 @@ function startGame(event) {
 // New code -----------------------------------------------------------------------
     if (anvilRight >= squirrelLeft && anvilLeft <= squirrelRight && anvilBot >= 520) {
       endGame();
-    } else if (nut3Bot >= 580) {
+    } else if (anvilBot >= 580) {
       anvil.remove();
       anvil.style.left = score.random() + "px";
       game.append(anvil);
+      // console.log(parseInt(window.getComputedStyle(anvil).getPropertyValue("left")));
     }
 // New code -----------------------------------------------------------------------
   }, 10);
-  console.log(checkHit);
+  console.log(`Check hit: ${checkHit}`);
 
   function endGame() {
     score.gameOver = true;
