@@ -26,7 +26,10 @@ _In this game the user first clicks the start button and the game begins. The go
 
 ## Setup/Installation Requirements
 
-* _clone the repository to your desktop from Github https://github.com/DavidDGamble/aww-nutz.git_
+* _clone the repository to your desktop from Github_ 
+```
+https://github.com/DavidDGamble/aww-nutz.git
+```
 * _run the following commands in the terminal in the root repository aww-nutz_
 ```
 npm i
