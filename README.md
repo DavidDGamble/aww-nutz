@@ -26,10 +26,18 @@ _In this game the user first clicks the start button and the game begins. The go
 
 ## Setup/Installation Requirements
 
-* _clone the repository to your desktop from Github_
-* _enter command in terminal: $ npm install_
-* _enter command in terminal: $ npm run build_
-* _enter command in terminal: $ npm run start_
+* _clone the repository to your desktop from Github https://github.com/DavidDGamble/aww-nutz.git_
+* _run the following commands in the terminal in the root repository aww-nutz_
+```
+npm i
+```
+```
+npm run build
+```
+```
+npm run start
+```
+
 * _Alternativly, go to https://daviddgamble.github.io/aww-nutz/ to play online_
 
 ## Known Bugs
