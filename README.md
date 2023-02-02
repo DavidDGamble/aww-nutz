@@ -2,7 +2,7 @@
 
 #### By: _**David Gamble, Bodie Wood, Lucas Mollerstuen, Chris Loveless & Brandon Fenk**_
 
-#### _This is a game where you move a squrriel acrossed the bottom of the game and catch acrons as they fall. Be careful of the anvil that drops!_
+#### _This is a game where you move a squirrel across the bottom of the game and catch acorns as they fall. Be careful of the anvil that drops!_
 
 ## Technologies Used
 
